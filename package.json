@@ -25,6 +25,8 @@
     "serverless-http": "^2.3.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.2",
+    "browser-sync": "^2.24.5",
     "nodemon": "^1.19.2",
     "semantic-ui-css": "^2.4.1"
   }
