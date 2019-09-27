@@ -1,0 +1,84 @@
+@import "variables.scss";
+
+body {
+    margin: 0;
+    background-color: $color-light;
+    display: flex;
+    flex-direction: column;
+}
+
+.container.centered, .button.centered {
+    align-self: center;
+}
+
+.container.left, .button.left {
+    align-self: left;
+}
+
+.container.right, .button.right {
+    align-self: right;
+}
+
+.text.centered, .heading.centered {
+    text-align: center;
+}
+
+.text.left, .heading.left {
+    text-align: left;
+}
+
+.text.right, .heading.right {
+    text-align: right;
+}
+
+.justified {
+    text-align: justify;
+}
+
+.heading {
+    font-size: $font-size-large;
+    font-family: $font-family;
+    color: $color-red;
+    margin: $margin-heading;
+}
+
+.text {
+    font-size: $font-size-medium;
+    font-family: $font-family;
+    color: $color-green;
+}
+
+.container {
+    padding: $padding-container;
+    width: $width-sm-container;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+  font-size: $font-size-medium;
+  font-family: $font-family;
+  padding: $padding-button;
+  color: $color-medium;
+  border: $border-button;
+  -moz-transition: padding .3s ease-in;
+  -o-transition: padding  .3s ease-in;
+  -webkit-transition: padding  .3s ease-in;
+  transition: padding  .3s ease-in;
+}
+
+.button:hover {
+  padding: $padding-button-hover;
+  color: $color-dark;
+  border: $border-button-hover;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "md")) {
+    .container {
+        width: $width-md-container;
+    }
+}

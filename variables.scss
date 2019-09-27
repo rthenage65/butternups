@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond&display=swap');
+
+$color-green: #61A344;
+$color-red: #C1595E;
+$color-yellow: #E1DD8F;
+$color-dark: #495159;
+$color-medium: #798189;
+$color-light: #EEEEEE;
+
+$font-family: EB Garamond;
+
+$font-size-large: 90px;
+$font-size-medium: 15px;
+$font-size-small: 12px;
+
+$padding-container: 8px;
+$padding-button: 12px;
+$padding-button-hover: 18px 42px;
+
+$margin-heading: 40px 0 10px;
+
+$border-button: 1px solid $color-medium;
+$border-button-hover: 1px solid $color-dark;
+
+$width-sm-container: 100%;
+$width-sm-half: 100%;
+$width-sm-third: 100%;
+
+$width-md-container: 66%;
+$width-md-half: 50%;
+$width-md-third: 33%;
+
+$grid-breakpoints: ("xs": 350, "sm": 500, "md": 750, "lg": 1000, "xl": 1200);
