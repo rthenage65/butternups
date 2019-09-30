@@ -73,6 +73,20 @@ body {
   border: $border-button-hover;
 }
 
+.padded {
+    padding: $padding-large;
+}
+
+.very.padded {
+    padding: $padding-huge;
+}
+
+#home-container {
+    background-image: $background-image-home-container;
+    background-position: center;
+    background-size: cover;
+}
+
 a {
   text-decoration: none;
 }
