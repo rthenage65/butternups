@@ -2,20 +2,27 @@
 
 body {
     margin: 0;
+    padding: 0;
     background-color: $color-light;
     display: flex;
     flex-direction: column;
 }
 
-.container.centered, .button.centered {
+main {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container.centered, .button.centered, .image.centered {
     align-self: center;
 }
 
-.container.left, .button.left {
+.container.left, .button.left, .image.left {
     align-self: left;
 }
 
-.container.right, .button.right {
+.container.right, .button.right, .image.right {
     align-self: right;
 }
 
@@ -36,27 +43,36 @@ body {
 }
 
 .heading {
-    font-size: $font-size-large;
+    font-size: $font-size-medium;
     font-family: $font-family;
-    color: $color-red;
+    color: $color-heading;
     margin: $margin-heading;
 }
 
+.large.heading {
+    font-size: $font-size-large;
+    margin: $margin-heading-large;
+}
+
 .text {
-    font-size: $font-size-medium;
+    font-size: $font-size-small;
     font-family: $font-family;
-    color: $color-green;
+    color: $color-text;
 }
 
 .container {
     padding: $padding-container;
-    width: $width-sm-container;
-    display: flex;
+    width: calc(#{$width-sm-container} - #{$padding-container} * 2);
+    display: inline-flex;
     flex-direction: column;
 }
 
+.container.row {
+    flex-direction: row;
+}
+
 .button {
-  font-size: $font-size-medium;
+  font-size: $font-size-small;
   font-family: $font-family;
   padding: $padding-button;
   color: $color-medium;
@@ -74,11 +90,34 @@ body {
 }
 
 .padded {
-    padding: $padding-large;
+    padding: 0;//$padding-large;
 }
 
 .very.padded {
-    padding: $padding-huge;
+    padding: 0;//$padding-huge;
+}
+
+.side.by.side {
+    display: inline;
+}
+
+.small.image {
+    width: $width-image-small;
+    max-width: $width-image-full;
+}
+
+.medium.image {
+    width: $width-image-medium;
+    max-width: $width-image-full;
+}
+
+.large.image {
+    width: $width-image-large;
+    max-width: $width-image-full;
+}
+
+.full.image {
+    width: $width-image-full;
 }
 
 #home-container {
@@ -95,4 +134,14 @@ a {
     .container {
         width: $width-md-container;
     }
+    .half.container {
+        width: $width-md-half;
+    }
+    .third.container {
+        width: $width-md-third;
+    }
+}
+
+* {
+    padding: 0;
 }
