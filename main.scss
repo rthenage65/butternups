@@ -38,6 +38,8 @@ main {
     text-align: right;
 }
 
+//TO DO: Add background to the butter2 image and center it vertically
+
 .justified {
     text-align: justify;
 }
@@ -62,13 +64,14 @@ main {
 
 .container {
     padding: $padding-container;
-    width: calc(#{$width-sm-container} - #{$padding-container} * 2);
     display: inline-flex;
     flex-direction: column;
 }
 
-.container.row {
-    flex-direction: row;
+@media only screen and (min-width: map-get($grid-breakpoints, $row-break)) {
+    .container.row {
+        flex-direction: row;
+    }
 }
 
 .button {
@@ -90,11 +93,11 @@ main {
 }
 
 .padded {
-    padding: 0;//$padding-large;
+    padding: $padding-large;
 }
 
 .very.padded {
-    padding: 0;//$padding-huge;
+    padding: $padding-huge;
 }
 
 .side.by.side {
@@ -130,18 +133,75 @@ a {
   text-decoration: none;
 }
 
-@media only screen and (min-width: map-get($grid-breakpoints, "md")) {
-    .container {
-        width: $width-md-container;
-    }
-    .half.container {
-        width: $width-md-half;
-    }
-    .third.container {
-        width: $width-md-third;
-    }
+.container {                            width: calc(#{$width-xs-container}  - #{$padding-container} * 2);    }
+.padded.container {                     width: calc(#{$width-xs-container}  - #{$padding-large} * 2);        }
+.very.padded.container {                width: calc(#{$width-xs-container}  - #{$padding-huge} * 2);         }
+.two.thirds.container {                 width: calc(#{$width-xs-two-thirds} - #{$padding-container} * 2);   }
+.padded.two.thirds.container {          width: calc(#{$width-xs-two-thirds} - #{$padding-large} * 2);       }
+.very.padded.two.thirds.container {     width: calc(#{$width-xs-two-thirds} - #{$padding-huge} * 2);        }
+.half.container {                       width: calc(#{$width-xs-half}       - #{$padding-container} * 2);         }
+.padded.half.container {                width: calc(#{$width-xs-half}       - #{$padding-large} * 2);             }
+.very.half.padded.container {           width: calc(#{$width-xs-half}       - #{$padding-huge} * 2);              }
+.third.container {                      width: calc(#{$width-xs-third}      - #{$padding-container} * 2);        }
+.padded.third.container {               width: calc(#{$width-xs-third}      - #{$padding-large} * 2);            }
+.very.third.padded.container {          width: calc(#{$width-xs-third}      - #{$padding-huge} * 2);             }
+
+@media only screen and (min-width: map-get($grid-breakpoints, "sm")) {
+    .container {                            width: calc(#{$width-sm-container}  - #{$padding-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-sm-container}  - #{$padding-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-sm-container}  - #{$padding-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-sm-two-thirds} - #{$padding-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-sm-two-thirds} - #{$padding-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-sm-two-thirds} - #{$padding-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-sm-half}       - #{$padding-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-sm-half}       - #{$padding-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-sm-half}       - #{$padding-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-sm-third}      - #{$padding-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-sm-third}      - #{$padding-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-sm-third}      - #{$padding-huge} * 2);             }
 }
 
-* {
-    padding: 0;
+@media only screen and (min-width: map-get($grid-breakpoints, "md")) {
+    .container {                            width: calc(#{$width-md-container}  - #{$padding-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-md-container}  - #{$padding-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-md-container}  - #{$padding-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-md-two-thirds} - #{$padding-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-md-two-thirds} - #{$padding-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-md-two-thirds} - #{$padding-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-md-half}       - #{$padding-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-md-half}       - #{$padding-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-md-half}       - #{$padding-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-md-third}      - #{$padding-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-md-third}      - #{$padding-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-md-third}      - #{$padding-huge} * 2);             }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    .container {                            width: calc(#{$width-lg-container}  - #{$padding-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-lg-container}  - #{$padding-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-lg-container}  - #{$padding-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-lg-two-thirds} - #{$padding-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-lg-two-thirds} - #{$padding-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-lg-two-thirds} - #{$padding-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-lg-half}       - #{$padding-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-lg-half}       - #{$padding-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-lg-half}       - #{$padding-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-lg-third}      - #{$padding-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-lg-third}      - #{$padding-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-lg-third}      - #{$padding-huge} * 2);             }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "xl")) {
+    .container {                            width: calc(#{$width-xl-container}  - #{$padding-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-xl-container}  - #{$padding-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-xl-container}  - #{$padding-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-xl-two-thirds} - #{$padding-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-xl-two-thirds} - #{$padding-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-xl-two-thirds} - #{$padding-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-xl-half}       - #{$padding-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-xl-half}       - #{$padding-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-xl-half}       - #{$padding-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-xl-third}      - #{$padding-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-xl-third}      - #{$padding-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-xl-third}      - #{$padding-huge} * 2);             }
 }

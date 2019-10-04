@@ -27,12 +27,17 @@ $margin-heading-large: 40px 0 10px;
 $border-button: 1px solid $color-medium;
 $border-button-hover: 1px solid $color-dark;
 
-$background-image-home-container: url("../images/butter.jpg");
+$background-image-home-container: url("../images/butter1.jpg");
 
 $width-image-small: 100px;
 $width-image-medium: 250px;
 $width-image-large: 800px;
 $width-image-full: 100%;
+
+$width-xs-container: 100%;
+$width-xs-two-thirds: 100%;
+$width-xs-half: 100%;
+$width-xs-third: 100%;
 
 $width-sm-container: 100%;
 $width-sm-two-thirds: 100%;
@@ -40,8 +45,20 @@ $width-sm-half: 100%;
 $width-sm-third: 100%;
 
 $width-md-container: 100%;
-$width-sm-two-thirds: 66%;
+$width-md-two-thirds: 66%;
 $width-md-half: 50%;
 $width-md-third: 33%;
 
+$width-lg-container: 100%;
+$width-lg-two-thirds: 66%;
+$width-lg-half: 50%;
+$width-lg-third: 33%;
+
+$width-xl-container: 100%;
+$width-xl-two-thirds: 66%;
+$width-xl-half: 50%;
+$width-xl-third: 33%;
+
 $grid-breakpoints: ("xs": 350px, "sm": 500px, "md": 750px, "lg": 1000px, "xl": 1200px);
+
+$row-break: "md"
