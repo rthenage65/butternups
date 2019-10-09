@@ -38,6 +38,11 @@ main {
     text-align: right;
 }
 
+.vertically.centered {
+    height: 100%;
+    justify-content: center;
+}
+
 //TO DO: Add background to the butter2 image and center it vertically
 
 .justified {
@@ -45,15 +50,32 @@ main {
 }
 
 .heading {
-    font-size: $font-size-medium;
     font-family: $font-family;
     color: $color-heading;
-    margin: $margin-heading;
+    font-size: $font-size-small;
+    margin: $margin-heading-small;
 }
 
 .large.heading {
-    font-size: $font-size-large;
-    margin: $margin-heading-large;
+    font-size: $font-size-medium;
+    margin: $margin-heading;
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "sm")) {
+    .heading {
+        font-size: $font-size-medium;
+        margin: $margin-heading;
+    }
+    
+    .large.heading {
+        font-size: $font-size-large;
+        margin: $margin-heading-large;
+    }
+}
+
+.small.heading {
+    font-size: $font-size-small;
+    margin: $margin-heading-small;
 }
 
 .text {
