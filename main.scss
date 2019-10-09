@@ -43,10 +43,14 @@ main {
     justify-content: center;
 }
 
-//TO DO: Add background to the butter2 image and center it vertically
-
 .justified {
     text-align: justify;
+}
+
+.text {
+    font-size: $font-size-tiny;
+    font-family: $font-family;
+    color: $color-text;
 }
 
 .heading {
@@ -72,16 +76,17 @@ main {
         margin: $margin-heading-large;
     }
 }
+@media only screen and (min-width: map-get($grid-breakpoints, "md")) {
+    .text {
+        font-size: $font-size-small;
+        font-family: $font-family;
+        color: $color-text;
+    }
+}
 
 .small.heading {
     font-size: $font-size-small;
     margin: $margin-heading-small;
-}
-
-.text {
-    font-size: $font-size-small;
-    font-family: $font-family;
-    color: $color-text;
 }
 
 .container {
@@ -91,7 +96,13 @@ main {
 }
 
 @media only screen and (min-width: map-get($grid-breakpoints, $row-break)) {
-    .container.row {
+    .row.container {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, $squishable-row-break)) {
+    .squishable.row.container {
         flex-direction: row;
     }
 }
@@ -181,6 +192,19 @@ a {
     .third.container {                      width: calc(#{$width-sm-third}      - #{$padding-container} * 2);        }
     .padded.third.container {               width: calc(#{$width-sm-third}      - #{$padding-large} * 2);            }
     .very.third.padded.container {          width: calc(#{$width-sm-third}      - #{$padding-huge} * 2);             }
+
+    .squishable .container {                            width: calc(#{$width-lg-container}  - #{$padding-container} * 2);    }
+    .squishable .padded.container {                     width: calc(#{$width-lg-container}  - #{$padding-large} * 2);        }
+    .squishable .very.padded.container {                width: calc(#{$width-lg-container}  - #{$padding-huge} * 2);         }
+    .squishable .two.thirds.container {                 width: calc(#{$width-lg-two-thirds} - #{$padding-container} * 2);   }
+    .squishable .padded.two.thirds.container {          width: calc(#{$width-lg-two-thirds} - #{$padding-large} * 2);       }
+    .squishable .very.padded.two.thirds.container {     width: calc(#{$width-lg-two-thirds} - #{$padding-huge} * 2);        }
+    .squishable .half.container {                       width: calc(#{$width-lg-half}       - #{$padding-container} * 2);         }
+    .squishable .padded.half.container {                width: calc(#{$width-lg-half}       - #{$padding-large} * 2);             }
+    .squishable .very.half.padded.container {           width: calc(#{$width-lg-half}       - #{$padding-huge} * 2);              }
+    .squishable .third.container {                      width: calc(#{$width-lg-third}      - #{$padding-container} * 2);        }
+    .squishable .padded.third.container {               width: calc(#{$width-lg-third}      - #{$padding-large} * 2);            }
+    .squishable .very.third.padded.container {          width: calc(#{$width-lg-third}      - #{$padding-huge} * 2);             }
 }
 
 @media only screen and (min-width: map-get($grid-breakpoints, "md")) {
@@ -196,6 +220,19 @@ a {
     .third.container {                      width: calc(#{$width-md-third}      - #{$padding-container} * 2);        }
     .padded.third.container {               width: calc(#{$width-md-third}      - #{$padding-large} * 2);            }
     .very.third.padded.container {          width: calc(#{$width-md-third}      - #{$padding-huge} * 2);             }
+
+    .squishable .container {                            width: calc(#{$width-xl-container}  - #{$padding-container} * 2);    }
+    .squishable .padded.container {                     width: calc(#{$width-xl-container}  - #{$padding-large} * 2);        }
+    .squishable .very.padded.container {                width: calc(#{$width-xl-container}  - #{$padding-huge} * 2);         }
+    .squishable .two.thirds.container {                 width: calc(#{$width-xl-two-thirds} - #{$padding-container} * 2);   }
+    .squishable .padded.two.thirds.container {          width: calc(#{$width-xl-two-thirds} - #{$padding-large} * 2);       }
+    .squishable .very.padded.two.thirds.container {     width: calc(#{$width-xl-two-thirds} - #{$padding-huge} * 2);        }
+    .squishable .half.container {                       width: calc(#{$width-xl-half}       - #{$padding-container} * 2);         }
+    .squishable .padded.half.container {                width: calc(#{$width-xl-half}       - #{$padding-large} * 2);             }
+    .squishable .very.half.padded.container {           width: calc(#{$width-xl-half}       - #{$padding-huge} * 2);              }
+    .squishable .third.container {                      width: calc(#{$width-xl-third}      - #{$padding-container} * 2);        }
+    .squishable .padded.third.container {               width: calc(#{$width-xl-third}      - #{$padding-large} * 2);            }
+    .squishable .very.third.padded.container {          width: calc(#{$width-xl-third}      - #{$padding-huge} * 2);             }
 }
 
 @media only screen and (min-width: map-get($grid-breakpoints, "lg")) {
