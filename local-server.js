@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const path = require('path');
-const serverless = require('serverless-http');
+const http = require('http');
 const app = express();
 
 // viewed at http://localhost:3000
@@ -17,4 +17,6 @@ app.get('/second', function(req, res) {
 
 app.listen(3000);
 
-module.exports.handler = serverless(app);
+var server = http.createServer(app);
+server.listen('3001');
+

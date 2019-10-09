@@ -5,33 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-    <script src="jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css/main.css">
 </head>
 <body>
-    <div class="ui four column doubling stackable grid container">
-        <div class="column">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est fugiat quia blanditiis cumque perferendis minima facere dolorem earum totam veritatis sunt, numquam rerum? Labore ratione tempora cupiditate harum dicta ducimus.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eos perspiciatis laborum maxime rerum possimus nesciunt velit natus iste. Quaerat, et totam inventore fuga quia accusantium incidunt distinctio debitis velit?</p>
+  <main>
+    <div class="very padded centered container" id="home-container">
+      <div class="large centered heading">Butternups</div>
+      <a class="centered button">Order Now</a>
+    </div>
+    <div class="padded left container">
+      <div class="row container">
+        <div class="two thirds container">
+          <div class="centered heading">About</div>
+          <div class="left text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint magnam suscipit consectetur tempore quam? Quos exercitationem dolor, alias dicta inventore modi ipsa excepturi in molestias quo. Similique necessitatibus voluptatem incidunt.</div>
         </div>
-        <div class="column">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate itaque libero vero sed pariatur quia in, culpa blanditiis aperiam, excepturi odit provident consequuntur perspiciatis autem ullam? Necessitatibus omnis ducimus corrupti.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore illum saepe asperiores minus? Alias, impedit? Illo omnis consequuntur deleniti tenetur. Rem ab fugiat magnam molestiae, inventore magni tempore deleniti quos.</p>
-        </div>
-        <div class="column">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe aliquid sint deserunt adipisci minima? Molestias commodi doloremque ipsam eaque aut facere, cumque ipsum quis, aperiam incidunt architecto alias magni nobis.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eius voluptate blanditiis repellat aperiam delectus minima. Unde aliquid, numquam cum perferendis explicabo illo maiores qui, quam iste, incidunt sunt pariatur?</p>
-        </div>
-        <div class="column">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, quasi at sunt neque ratione nobis explicabo laboriosam, corrupti molestias exercitationem et. Facere minus officiis libero quibusdam atque reprehenderit sequi commodi!</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam molestias, distinctio sint eveniet officiis repellendus maxime id reprehenderit, quos earum, obcaecati iure quo consequuntur dolores soluta modi! Nostrum, alias pariatur.</p>
+        <div class="third vertically centered container">
+          <img class="full image" src="images/cherrypie.jpg">
         </div>
       </div>
+    </div>
+    <br/><br/><br/>
+    <div class="centered heading">The Butter</div>
+    <div class="padded left container">
+      <div class="row container">
+        <div class="two thirds container">
+          <div class="small left heading">Cherry Pie</div>
+          <div class="left text">A delicious, creamy butter that always tastes fresh</div>
+          <div class="left text">8$ for 3 ounces</div>
+        </div>
+        <div class="third vertically centered container">
+          <img class="full image" src="images/cherrypie.jpg">
+        </div>
+      </div>
+    </div>
+    <br/><br/><br/>
+    <div class="centered heading">Contact and Order</div>
+    <form name="contact" method="POST" data-netlify="true">
+      <p>
+        <label>Your Name: <input type="text" name="name" /></label>   
+      </p>
+      <p>
+        <label>Your Email: <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <label>Your Role: <select name="role[]" multiple>
+          <option value="leader">Leader</option>
+          <option value="follower">Follower</option>
+        </select></label>
+      </p>
+      <p>
+        <label>Message: <textarea name="message"></textarea></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+  </main>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,229 @@
+@import "variables.scss";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $color-light;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container.centered, .button.centered, .image.centered {
+    align-self: center;
+}
+
+.container.left, .button.left, .image.left {
+    align-self: left;
+}
+
+.container.right, .button.right, .image.right {
+    align-self: right;
+}
+
+.text.centered, .heading.centered {
+    text-align: center;
+}
+
+.text.left, .heading.left {
+    text-align: left;
+}
+
+.text.right, .heading.right {
+    text-align: right;
+}
+
+.vertically.centered {
+    height: 100%;
+    justify-content: center;
+}
+
+//TO DO: Add background to the butter2 image and center it vertically
+
+.justified {
+    text-align: justify;
+}
+
+.heading {
+    font-family: $font-family;
+    color: $color-heading;
+    font-size: $font-size-small;
+    margin: $margin-heading-small;
+}
+
+.large.heading {
+    font-size: $font-size-medium;
+    margin: $margin-heading;
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "sm")) {
+    .heading {
+        font-size: $font-size-medium;
+        margin: $margin-heading;
+    }
+    
+    .large.heading {
+        font-size: $font-size-large;
+        margin: $margin-heading-large;
+    }
+}
+
+.small.heading {
+    font-size: $font-size-small;
+    margin: $margin-heading-small;
+}
+
+.text {
+    font-size: $font-size-small;
+    font-family: $font-family;
+    color: $color-text;
+}
+
+.container {
+    padding: $padding-container;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, $row-break)) {
+    .container.row {
+        flex-direction: row;
+    }
+}
+
+.button {
+  font-size: $font-size-small;
+  font-family: $font-family;
+  padding: $padding-button;
+  color: $color-medium;
+  border: $border-button;
+  -moz-transition: padding .3s ease-in;
+  -o-transition: padding  .3s ease-in;
+  -webkit-transition: padding  .3s ease-in;
+  transition: padding  .3s ease-in;
+}
+
+.button:hover {
+  padding: $padding-button-hover;
+  color: $color-dark;
+  border: $border-button-hover;
+}
+
+.padded {
+    padding: $padding-large;
+}
+
+.very.padded {
+    padding: $padding-huge;
+}
+
+.side.by.side {
+    display: inline;
+}
+
+.small.image {
+    width: $width-image-small;
+    max-width: $width-image-full;
+}
+
+.medium.image {
+    width: $width-image-medium;
+    max-width: $width-image-full;
+}
+
+.large.image {
+    width: $width-image-large;
+    max-width: $width-image-full;
+}
+
+.full.image {
+    width: $width-image-full;
+}
+
+#home-container {
+    background-image: $background-image-home-container;
+    background-position: center;
+    background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {                            width: calc(#{$width-xs-container}  - #{$padding-container} * 2);    }
+.padded.container {                     width: calc(#{$width-xs-container}  - #{$padding-large} * 2);        }
+.very.padded.container {                width: calc(#{$width-xs-container}  - #{$padding-huge} * 2);         }
+.two.thirds.container {                 width: calc(#{$width-xs-two-thirds} - #{$padding-container} * 2);   }
+.padded.two.thirds.container {          width: calc(#{$width-xs-two-thirds} - #{$padding-large} * 2);       }
+.very.padded.two.thirds.container {     width: calc(#{$width-xs-two-thirds} - #{$padding-huge} * 2);        }
+.half.container {                       width: calc(#{$width-xs-half}       - #{$padding-container} * 2);         }
+.padded.half.container {                width: calc(#{$width-xs-half}       - #{$padding-large} * 2);             }
+.very.half.padded.container {           width: calc(#{$width-xs-half}       - #{$padding-huge} * 2);              }
+.third.container {                      width: calc(#{$width-xs-third}      - #{$padding-container} * 2);        }
+.padded.third.container {               width: calc(#{$width-xs-third}      - #{$padding-large} * 2);            }
+.very.third.padded.container {          width: calc(#{$width-xs-third}      - #{$padding-huge} * 2);             }
+
+@media only screen and (min-width: map-get($grid-breakpoints, "sm")) {
+    .container {                            width: calc(#{$width-sm-container}  - #{$padding-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-sm-container}  - #{$padding-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-sm-container}  - #{$padding-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-sm-two-thirds} - #{$padding-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-sm-two-thirds} - #{$padding-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-sm-two-thirds} - #{$padding-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-sm-half}       - #{$padding-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-sm-half}       - #{$padding-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-sm-half}       - #{$padding-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-sm-third}      - #{$padding-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-sm-third}      - #{$padding-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-sm-third}      - #{$padding-huge} * 2);             }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "md")) {
+    .container {                            width: calc(#{$width-md-container}  - #{$padding-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-md-container}  - #{$padding-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-md-container}  - #{$padding-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-md-two-thirds} - #{$padding-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-md-two-thirds} - #{$padding-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-md-two-thirds} - #{$padding-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-md-half}       - #{$padding-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-md-half}       - #{$padding-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-md-half}       - #{$padding-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-md-third}      - #{$padding-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-md-third}      - #{$padding-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-md-third}      - #{$padding-huge} * 2);             }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    .container {                            width: calc(#{$width-lg-container}  - #{$padding-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-lg-container}  - #{$padding-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-lg-container}  - #{$padding-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-lg-two-thirds} - #{$padding-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-lg-two-thirds} - #{$padding-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-lg-two-thirds} - #{$padding-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-lg-half}       - #{$padding-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-lg-half}       - #{$padding-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-lg-half}       - #{$padding-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-lg-third}      - #{$padding-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-lg-third}      - #{$padding-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-lg-third}      - #{$padding-huge} * 2);             }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "xl")) {
+    .container {                            width: calc(#{$width-xl-container}  - #{$padding-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-xl-container}  - #{$padding-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-xl-container}  - #{$padding-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-xl-two-thirds} - #{$padding-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-xl-two-thirds} - #{$padding-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-xl-two-thirds} - #{$padding-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-xl-half}       - #{$padding-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-xl-half}       - #{$padding-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-xl-half}       - #{$padding-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-xl-third}      - #{$padding-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-xl-third}      - #{$padding-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-xl-third}      - #{$padding-huge} * 2);             }
+}
