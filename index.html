@@ -15,7 +15,7 @@
   <main>
     <div class="very padded centered container" id="home-container">
       <div class="large centered heading">Butternups</div>
-      <a class="centered button">Order Now</a>
+      <a class="centered button" href="#contact">Order Now</a>
     </div>
     <div class="centered heading">About</div>
     <div class="padded left container">
@@ -30,31 +30,10 @@
     </div>
     <div class="centered heading">The Butter</div>
     <div class="padded left container">
-      <div class="row container">
-        <div class="squishable half row container">
-          <div class="two thirds container">
-            <div class="small left heading">Cherry Pie</div>
-            <div class="left text">A delicious, creamy butter that always tastes fresh</div>
-            <div class="left text">8$ for 3 ounces</div>
-          </div>
-          <div class="third vertically centered container">
-            <img class="full image" src="images/cherrypie.jpg">
-          </div>
-        </div>
-        <div class="squishable half row container">
-          <div class="two thirds container">
-            <div class="small left heading">Cherry Pie</div>
-            <div class="left text">A delicious, creamy butter that always tastes fresh</div>
-            <div class="left text">8$ for 3 ounces</div>
-          </div>
-          <div class="third vertically centered container">
-            <img class="full image" src="images/cherrypie.jpg">
-          </div>
-        </div>
-      </div>
+      <div class="row container" id="butter-container"></div>
     </div>
     <br/><br/><br/>
-    <div class="centered heading">Contact and Order</div>
+    <div class="centered heading" id="contact">Contact and Order</div>
     <div class="padded left container">
       <form name="contact" method="POST" data-netlify="true">
         <p>
@@ -78,6 +57,8 @@
       </form>
     </div>
   </main>
-<script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="express/index.js"></script>
+  <script src="local-server.js"></script>
 </body>
 </html>

@@ -1,5 +1,9 @@
 @import "variables.scss";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -104,6 +108,12 @@ main {
 @media only screen and (min-width: map-get($grid-breakpoints, $squishable-row-break)) {
     .squishable.row.container {
         flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, $adaptable-column-break)) {
+    .adaptable.row.container {
+        flex-direction: column;
     }
 }
 
@@ -247,7 +257,20 @@ a {
     .very.half.padded.container {           width: calc(#{$width-lg-half}       - #{$padding-huge} * 2);              }
     .third.container {                      width: calc(#{$width-lg-third}      - #{$padding-container} * 2);        }
     .padded.third.container {               width: calc(#{$width-lg-third}      - #{$padding-large} * 2);            }
-    .very.third.padded.container {          width: calc(#{$width-lg-third}      - #{$padding-huge} * 2);             }
+    .very.third.padded.container {          width: calc(#{$width-lg-third}      - #{$padding-huge} * 2);        }
+
+    .adaptable .container {                            width: calc(#{$width-sm-container}  - #{$padding-container} * 2);    }
+    .adaptable .padded.container {                     width: calc(#{$width-sm-container}  - #{$padding-large} * 2);        }
+    .adaptable .very.padded.container {                width: calc(#{$width-sm-container}  - #{$padding-huge} * 2);         }
+    .adaptable .two.thirds.container {                 width: calc(#{$width-sm-two-thirds} - #{$padding-container} * 2);   }
+    .adaptable .padded.two.thirds.container {          width: calc(#{$width-sm-two-thirds} - #{$padding-large} * 2);       }
+    .adaptable .very.padded.two.thirds.container {     width: calc(#{$width-sm-two-thirds} - #{$padding-huge} * 2);        }
+    .adaptable .half.container {                       width: calc(#{$width-sm-half}       - #{$padding-container} * 2);         }
+    .adaptable .padded.half.container {                width: calc(#{$width-sm-half}       - #{$padding-large} * 2);             }
+    .adaptable .very.half.padded.container {           width: calc(#{$width-sm-half}       - #{$padding-huge} * 2);              }
+    .adaptable .third.container {                      width: calc(#{$width-sm-third}      - #{$padding-container} * 2);        }
+    .adaptable .padded.third.container {               width: calc(#{$width-sm-third}      - #{$padding-large} * 2);            }
+    .adaptable .very.third.padded.container {          width: calc(#{$width-sm-third}      - #{$padding-huge} * 2);             }
 }
 
 @media only screen and (min-width: map-get($grid-breakpoints, "xl")) {

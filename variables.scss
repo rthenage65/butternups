@@ -16,10 +16,10 @@ $font-size-medium: 45px;
 $font-size-small: 25px;
 $font-size-tiny: 15px;
 
-$padding-container: 8px;
+$padding-container: 0 8px 16px;
 $padding-button: 12px;
 $padding-button-hover: 18px 42px;
-$padding-large: 20px;
+$padding-large:  0 20px 40px;
 $padding-huge: 40px;
 
 $margin-heading: 30px 5px 10px;
@@ -29,7 +29,7 @@ $margin-heading-small: 15px 5px 5px;
 $border-button: 1px solid $color-medium;
 $border-button-hover: 1px solid $color-dark;
 
-$background-image-home-container: url("../images/butter1.jpg");
+$background-image-home-container: url("../images/logo.png");
 
 $width-image-small: 100px;
 $width-image-medium: 250px;
@@ -65,3 +65,4 @@ $grid-breakpoints: ("xs": 350px, "sm": 500px, "md": 750px, "lg": 1000px, "xl": 1
 
 $row-break: "lg";
 $squishable-row-break: "sm";
+$adaptable-column-break: "lg";
