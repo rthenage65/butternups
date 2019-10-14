@@ -8,6 +8,8 @@ $color-medium: #798189;
 $color-light: #EEEEEE;
 $color-text: $color-medium;
 $color-heading: $color-red;
+$background-color: white;
+$background-color-faded: rgba(255, 255, 255, 0.6);
 
 $font-family: EB Garamond;
 
@@ -21,6 +23,17 @@ $padding-button: 12px;
 $padding-button-hover: 18px 42px;
 $padding-large:  0 20px 40px;
 $padding-huge: 40px;
+$padding-even-large: 20px;
+$padding-even-huge: 40px;
+
+$padding-side-container: 8px;
+$padding-side-button: 12px;
+$padding-side-button-hover: 42px;
+$padding-side-large: 20px;
+$padding-side-huge: 40px;
+$padding-side-even-large: 20px;
+$padding-side-even-huge: 40px;
+
 
 $margin-heading: 30px 5px 10px;
 $margin-heading-large: 40px 0 10px;
@@ -29,7 +42,7 @@ $margin-heading-small: 15px 5px 5px;
 $border-button: 1px solid $color-medium;
 $border-button-hover: 1px solid $color-dark;
 
-$background-image-home-container: url("../images/logo.png");
+$background-image-home-container: url("../images/cinnamonhoney.jpg");
 
 $width-image-small: 100px;
 $width-image-medium: 250px;
@@ -61,7 +74,7 @@ $width-xl-two-thirds: 66%;
 $width-xl-half: 50%;
 $width-xl-third: 33%;
 
-$grid-breakpoints: ("xs": 350px, "sm": 500px, "md": 750px, "lg": 1000px, "xl": 1200px);
+$grid-breakpoints: ("xs": 350px, "sm": 530px, "md": 750px, "lg": 1000px, "xl": 1200px);
 
 $row-break: "lg";
 $squishable-row-break: "sm";

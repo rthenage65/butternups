@@ -3,6 +3,7 @@ console.log('js runs')
 $.getJSON( "object.json", function( json ) {
   console.log(json);
   for (let i = 0; i < json.length; i++) {
+    console.log('new butter')
     $("#butter-container").append(`
         <div class="adaptable squishable half row container">
           <div class="two thirds container">
