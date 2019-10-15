@@ -34,28 +34,39 @@
     <div class="padded left container">
       <div class="row container" id="butter-container"></div>
     </div>
-    <!-- add reviews here -->
-    <div class="centered heading" id="contact">Contact and Order</div>
     <div class="padded left container">
+      <div class="row container" id="butter-container">
+        <div class="container">
+          <div class="left quote">"I love this butter! It's great for any occasion" - customer</div>
+        </div>
+        <div class="container">
+          <div class="left quote">"Butternups is always reliable and delicious" - customer</div>
+        </div>
+      </div>
+    </div>
+    <div class="centered heading" id="contact">Contact and Order</div>
+    <div class="left container">
       <form name="contact" method="POST" data-netlify="true">
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>   
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label>Your Role: <select name="role[]" multiple>
-            <option value="leader">Leader</option>
-            <option value="follower">Follower</option>
+        <div class="container">
+          <label class="centered text row">Your Name: <input class="text" type="text" name="name" /></label>   
+        </div>
+        <div class="container">
+          <label class="centered text row">Your Email: <input class="text" type="email" name="email" /></label>   
+        </div>
+        <!-- <div class="container">
+          <label class="centered text row">Your Role: <select class="text" name="role[]">
+            <option class="text" value="leader">Leader</option>
+            <option class="text" value="follower">Follower</option>
           </select></label>
-        </p>
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
+        </div> -->
+        <div class="container">
+          <label class="centered text row">
+            <textarea class="text" name="message" placeholder="Message/Order"></textarea>
+          </label>
+        </div>
+        <div class="centered text">
+          <button class="centered button" type="submit">Send</button>
+        </div>
       </form>
     </div>
   </main>

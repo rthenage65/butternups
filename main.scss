@@ -30,15 +30,15 @@ main {
     align-self: right;
 }
 
-.text.centered, .heading.centered {
+.text.centered, .heading.centered, .quote.centered {
     text-align: center;
 }
 
-.text.left, .heading.left {
+.text.left, .heading.left, .quote.left {
     text-align: left;
 }
 
-.text.right, .heading.right {
+.text.right, .heading.right, .quote.right {
     text-align: right;
 }
 
@@ -55,6 +55,14 @@ main {
     font-size: $font-size-tiny;
     font-family: $font-family;
     color: $color-text;
+}
+
+.quote {
+    font-size: $font-size-tiny;
+    font-family: $font-family;
+    color: $color-quote;
+    padding: $padding-quote;
+    background-color: $background-color-quote;
 }
 
 .heading {
@@ -98,10 +106,8 @@ main {
 }
 
 @media only screen and (min-width: map-get($grid-breakpoints, "md")) {
-    .text {
+    .text, .quote {
         font-size: $font-size-small;
-        font-family: $font-family;
-        color: $color-text;
     }
 }
 
@@ -195,6 +201,16 @@ main {
 
 a {
   text-decoration: none;
+}
+
+input, select {
+    margin: $margin-input;
+}
+
+textarea {
+    resize: vertical;
+    width: $width-textarea;
+    height: $height-textarea;
 }
 
 .container {                            width: calc(#{$width-xs-container}  - #{$padding-side-container} * 2);    }

@@ -5,11 +5,14 @@ $color-red: #C1595E;
 $color-yellow: #E1DD8F;
 $color-dark: #495159;
 $color-medium: #798189;
+$color-medium-light: #99A1A9;
 $color-light: #EEEEEE;
 $color-text: $color-medium;
+$color-quote: $color-yellow;
 $color-heading: $color-red;
 $background-color: white;
 $background-color-faded: rgba(255, 255, 255, 0.6);
+$background-color-quote: $color-green;//$color-medium-light;
 
 $font-family: EB Garamond;
 
@@ -21,6 +24,7 @@ $font-size-tiny: 15px;
 $padding-container: 0 8px 16px;
 $padding-button: 12px;
 $padding-button-hover: 18px 42px;
+$padding-quote: 8px;
 $padding-large:  0 20px 40px;
 $padding-huge: 40px;
 $padding-even-large: 20px;
@@ -34,15 +38,18 @@ $padding-side-huge: 40px;
 $padding-side-even-large: 20px;
 $padding-side-even-huge: 40px;
 
-
 $margin-heading: 30px 5px 10px;
 $margin-heading-large: 40px 0 10px;
 $margin-heading-small: 15px 5px 5px;
+$margin-input: 0 0 0 20px;
 
 $border-button: 1px solid $color-medium;
 $border-button-hover: 1px solid $color-dark;
 
 $background-image-home-container: url("../images/cinnamonhoney.jpg");
+
+$height-textarea: 2em;
+$width-textarea: 100%;
 
 $width-image-small: 100px;
 $width-image-medium: 250px;
