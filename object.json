@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Cherry Pie",
+      "discription": "Just like fresh baked pie, bursting with flavor",
+      "price": "$10 per pound",
+      "imgSrc": "images/cherrypie.jpg"
+    }, 
+    {
+      "name": "Chocolate",
+      "discription": "Clasic chocolate, a must-have at any event",
+      "price": "$10 per pound",
+      "imgSrc": "images/chocolate.jpg"
+    }, 
+    {
+      "name": "Cinnamon Honey",
+      "discription": "Melts in your mouth, a perfect blend of sugar and spice",
+      "price": "$10 per pound",
+      "imgSrc": "images/cinnamonhoney.jpg"
+    }, 
+    {
+      "name": "Spiced Peach",
+      "discription": "The beloved butter that tastes like heaven itself",
+      "price": "$10 per pound",
+      "imgSrc": "images/spicedpeach.jpg"
+    }
+  ]

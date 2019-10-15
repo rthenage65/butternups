@@ -1,5 +1,9 @@
 @import "variables.scss";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -26,15 +30,15 @@ main {
     align-self: right;
 }
 
-.text.centered, .heading.centered {
+.text.centered, .heading.centered, .quote.centered {
     text-align: center;
 }
 
-.text.left, .heading.left {
+.text.left, .heading.left, .quote.left {
     text-align: left;
 }
 
-.text.right, .heading.right {
+.text.right, .heading.right, .quote.right {
     text-align: right;
 }
 
@@ -43,10 +47,22 @@ main {
     justify-content: center;
 }
 
-//TO DO: Add background to the butter2 image and center it vertically
-
 .justified {
     text-align: justify;
+}
+
+.text {
+    font-size: $font-size-tiny;
+    font-family: $font-family;
+    color: $color-text;
+}
+
+.quote {
+    font-size: $font-size-tiny;
+    font-family: $font-family;
+    color: $color-quote;
+    padding: $padding-quote;
+    background-color: $background-color-quote;
 }
 
 .heading {
@@ -61,6 +77,18 @@ main {
     margin: $margin-heading;
 }
 
+.button {
+  font-size: $font-size-tiny;
+  font-family: $font-family;
+  padding: $padding-button;
+  color: $color-medium;
+  border: $border-button;
+  -moz-transition: padding .3s ease-in;
+  -o-transition: padding  .3s ease-in;
+  -webkit-transition: padding  .3s ease-in;
+  transition: padding  .3s ease-in;
+}
+
 @media only screen and (min-width: map-get($grid-breakpoints, "sm")) {
     .heading {
         font-size: $font-size-medium;
@@ -71,17 +99,21 @@ main {
         font-size: $font-size-large;
         margin: $margin-heading-large;
     }
+    
+    .button {
+        font-size: $font-size-small;
+    }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "md")) {
+    .text, .quote {
+        font-size: $font-size-small;
+    }
 }
 
 .small.heading {
     font-size: $font-size-small;
     margin: $margin-heading-small;
-}
-
-.text {
-    font-size: $font-size-small;
-    font-family: $font-family;
-    color: $color-text;
 }
 
 .container {
@@ -91,21 +123,21 @@ main {
 }
 
 @media only screen and (min-width: map-get($grid-breakpoints, $row-break)) {
-    .container.row {
+    .row.container {
         flex-direction: row;
     }
 }
 
-.button {
-  font-size: $font-size-small;
-  font-family: $font-family;
-  padding: $padding-button;
-  color: $color-medium;
-  border: $border-button;
-  -moz-transition: padding .3s ease-in;
-  -o-transition: padding  .3s ease-in;
-  -webkit-transition: padding  .3s ease-in;
-  transition: padding  .3s ease-in;
+@media only screen and (min-width: map-get($grid-breakpoints, $squishable-row-break)) {
+    .squishable.row.container {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, $adaptable-column-break)) {
+    .adaptable.row.container {
+        flex-direction: column;
+    }
 }
 
 .button:hover {
@@ -120,6 +152,14 @@ main {
 
 .very.padded {
     padding: $padding-huge;
+}
+
+.evenly.padded {
+    padding: $padding-even-large;
+}
+
+.very.evenly.padded {
+    padding: $padding-even-huge;
 }
 
 .side.by.side {
@@ -151,79 +191,136 @@ main {
     background-size: cover;
 }
 
+.background {
+    background-color: $background-color;
+}
+
+.faded.background {
+    background-color: $background-color-faded;
+}
+
 a {
   text-decoration: none;
 }
 
-.container {                            width: calc(#{$width-xs-container}  - #{$padding-container} * 2);    }
-.padded.container {                     width: calc(#{$width-xs-container}  - #{$padding-large} * 2);        }
-.very.padded.container {                width: calc(#{$width-xs-container}  - #{$padding-huge} * 2);         }
-.two.thirds.container {                 width: calc(#{$width-xs-two-thirds} - #{$padding-container} * 2);   }
-.padded.two.thirds.container {          width: calc(#{$width-xs-two-thirds} - #{$padding-large} * 2);       }
-.very.padded.two.thirds.container {     width: calc(#{$width-xs-two-thirds} - #{$padding-huge} * 2);        }
-.half.container {                       width: calc(#{$width-xs-half}       - #{$padding-container} * 2);         }
-.padded.half.container {                width: calc(#{$width-xs-half}       - #{$padding-large} * 2);             }
-.very.half.padded.container {           width: calc(#{$width-xs-half}       - #{$padding-huge} * 2);              }
-.third.container {                      width: calc(#{$width-xs-third}      - #{$padding-container} * 2);        }
-.padded.third.container {               width: calc(#{$width-xs-third}      - #{$padding-large} * 2);            }
-.very.third.padded.container {          width: calc(#{$width-xs-third}      - #{$padding-huge} * 2);             }
+input, select {
+    margin: $margin-input;
+}
+
+textarea {
+    resize: vertical;
+    width: $width-textarea;
+    height: $height-textarea;
+}
+
+.container {                            width: calc(#{$width-xs-container}  - #{$padding-side-container} * 2);    }
+.padded.container {                     width: calc(#{$width-xs-container}  - #{$padding-side-large} * 2);        }
+.very.padded.container {                width: calc(#{$width-xs-container}  - #{$padding-side-huge} * 2);         }
+.two.thirds.container {                 width: calc(#{$width-xs-two-thirds} - #{$padding-side-container} * 2);   }
+.padded.two.thirds.container {          width: calc(#{$width-xs-two-thirds} - #{$padding-side-large} * 2);       }
+.very.padded.two.thirds.container {     width: calc(#{$width-xs-two-thirds} - #{$padding-side-huge} * 2);        }
+.half.container {                       width: calc(#{$width-xs-half}       - #{$padding-side-container} * 2);         }
+.padded.half.container {                width: calc(#{$width-xs-half}       - #{$padding-side-large} * 2);             }
+.very.half.padded.container {           width: calc(#{$width-xs-half}       - #{$padding-side-huge} * 2);              }
+.third.container {                      width: calc(#{$width-xs-third}      - #{$padding-side-container} * 2);        }
+.padded.third.container {               width: calc(#{$width-xs-third}      - #{$padding-side-large} * 2);            }
+.very.third.padded.container {          width: calc(#{$width-xs-third}      - #{$padding-side-huge} * 2);             }
 
 @media only screen and (min-width: map-get($grid-breakpoints, "sm")) {
-    .container {                            width: calc(#{$width-sm-container}  - #{$padding-container} * 2);    }
-    .padded.container {                     width: calc(#{$width-sm-container}  - #{$padding-large} * 2);        }
-    .very.padded.container {                width: calc(#{$width-sm-container}  - #{$padding-huge} * 2);         }
-    .two.thirds.container {                 width: calc(#{$width-sm-two-thirds} - #{$padding-container} * 2);   }
-    .padded.two.thirds.container {          width: calc(#{$width-sm-two-thirds} - #{$padding-large} * 2);       }
-    .very.padded.two.thirds.container {     width: calc(#{$width-sm-two-thirds} - #{$padding-huge} * 2);        }
-    .half.container {                       width: calc(#{$width-sm-half}       - #{$padding-container} * 2);         }
-    .padded.half.container {                width: calc(#{$width-sm-half}       - #{$padding-large} * 2);             }
-    .very.half.padded.container {           width: calc(#{$width-sm-half}       - #{$padding-huge} * 2);              }
-    .third.container {                      width: calc(#{$width-sm-third}      - #{$padding-container} * 2);        }
-    .padded.third.container {               width: calc(#{$width-sm-third}      - #{$padding-large} * 2);            }
-    .very.third.padded.container {          width: calc(#{$width-sm-third}      - #{$padding-huge} * 2);             }
+    .container {                            width: calc(#{$width-sm-container}  - #{$padding-side-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-sm-container}  - #{$padding-side-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-sm-container}  - #{$padding-side-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-sm-two-thirds} - #{$padding-side-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-sm-two-thirds} - #{$padding-side-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-sm-two-thirds} - #{$padding-side-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-sm-half}       - #{$padding-side-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-sm-half}       - #{$padding-side-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-sm-half}       - #{$padding-side-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-sm-third}      - #{$padding-side-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-sm-third}      - #{$padding-side-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-sm-third}      - #{$padding-side-huge} * 2);             }
+
+    .squishable .container {                            width: calc(#{$width-lg-container}  - #{$padding-side-container} * 2);    }
+    .squishable .padded.container {                     width: calc(#{$width-lg-container}  - #{$padding-side-large} * 2);        }
+    .squishable .very.padded.container {                width: calc(#{$width-lg-container}  - #{$padding-side-huge} * 2);         }
+    .squishable .two.thirds.container {                 width: calc(#{$width-lg-two-thirds} - #{$padding-side-container} * 2);   }
+    .squishable .padded.two.thirds.container {          width: calc(#{$width-lg-two-thirds} - #{$padding-side-large} * 2);       }
+    .squishable .very.padded.two.thirds.container {     width: calc(#{$width-lg-two-thirds} - #{$padding-side-huge} * 2);        }
+    .squishable .half.container {                       width: calc(#{$width-lg-half}       - #{$padding-side-container} * 2);         }
+    .squishable .padded.half.container {                width: calc(#{$width-lg-half}       - #{$padding-side-large} * 2);             }
+    .squishable .very.half.padded.container {           width: calc(#{$width-lg-half}       - #{$padding-side-huge} * 2);              }
+    .squishable .third.container {                      width: calc(#{$width-lg-third}      - #{$padding-side-container} * 2);        }
+    .squishable .padded.third.container {               width: calc(#{$width-lg-third}      - #{$padding-side-large} * 2);            }
+    .squishable .very.third.padded.container {          width: calc(#{$width-lg-third}      - #{$padding-side-huge} * 2);             }
 }
 
 @media only screen and (min-width: map-get($grid-breakpoints, "md")) {
-    .container {                            width: calc(#{$width-md-container}  - #{$padding-container} * 2);    }
-    .padded.container {                     width: calc(#{$width-md-container}  - #{$padding-large} * 2);        }
-    .very.padded.container {                width: calc(#{$width-md-container}  - #{$padding-huge} * 2);         }
-    .two.thirds.container {                 width: calc(#{$width-md-two-thirds} - #{$padding-container} * 2);   }
-    .padded.two.thirds.container {          width: calc(#{$width-md-two-thirds} - #{$padding-large} * 2);       }
-    .very.padded.two.thirds.container {     width: calc(#{$width-md-two-thirds} - #{$padding-huge} * 2);        }
-    .half.container {                       width: calc(#{$width-md-half}       - #{$padding-container} * 2);         }
-    .padded.half.container {                width: calc(#{$width-md-half}       - #{$padding-large} * 2);             }
-    .very.half.padded.container {           width: calc(#{$width-md-half}       - #{$padding-huge} * 2);              }
-    .third.container {                      width: calc(#{$width-md-third}      - #{$padding-container} * 2);        }
-    .padded.third.container {               width: calc(#{$width-md-third}      - #{$padding-large} * 2);            }
-    .very.third.padded.container {          width: calc(#{$width-md-third}      - #{$padding-huge} * 2);             }
+    .container {                            width: calc(#{$width-md-container}  - #{$padding-side-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-md-container}  - #{$padding-side-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-md-container}  - #{$padding-side-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-md-two-thirds} - #{$padding-side-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-md-two-thirds} - #{$padding-side-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-md-two-thirds} - #{$padding-side-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-md-half}       - #{$padding-side-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-md-half}       - #{$padding-side-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-md-half}       - #{$padding-side-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-md-third}      - #{$padding-side-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-md-third}      - #{$padding-side-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-md-third}      - #{$padding-side-huge} * 2);             }
+
+    .squishable .container {                            width: calc(#{$width-xl-container}  - #{$padding-side-container} * 2);    }
+    .squishable .padded.container {                     width: calc(#{$width-xl-container}  - #{$padding-side-large} * 2);        }
+    .squishable .very.padded.container {                width: calc(#{$width-xl-container}  - #{$padding-side-huge} * 2);         }
+    .squishable .two.thirds.container {                 width: calc(#{$width-xl-two-thirds} - #{$padding-side-container} * 2);   }
+    .squishable .padded.two.thirds.container {          width: calc(#{$width-xl-two-thirds} - #{$padding-side-large} * 2);       }
+    .squishable .very.padded.two.thirds.container {     width: calc(#{$width-xl-two-thirds} - #{$padding-side-huge} * 2);        }
+    .squishable .half.container {                       width: calc(#{$width-xl-half}       - #{$padding-side-container} * 2);         }
+    .squishable .padded.half.container {                width: calc(#{$width-xl-half}       - #{$padding-side-large} * 2);             }
+    .squishable .very.half.padded.container {           width: calc(#{$width-xl-half}       - #{$padding-side-huge} * 2);              }
+    .squishable .third.container {                      width: calc(#{$width-xl-third}      - #{$padding-side-container} * 2);        }
+    .squishable .padded.third.container {               width: calc(#{$width-xl-third}      - #{$padding-side-large} * 2);            }
+    .squishable .very.third.padded.container {          width: calc(#{$width-xl-third}      - #{$padding-side-huge} * 2);             }
 }
 
 @media only screen and (min-width: map-get($grid-breakpoints, "lg")) {
-    .container {                            width: calc(#{$width-lg-container}  - #{$padding-container} * 2);    }
-    .padded.container {                     width: calc(#{$width-lg-container}  - #{$padding-large} * 2);        }
-    .very.padded.container {                width: calc(#{$width-lg-container}  - #{$padding-huge} * 2);         }
-    .two.thirds.container {                 width: calc(#{$width-lg-two-thirds} - #{$padding-container} * 2);   }
-    .padded.two.thirds.container {          width: calc(#{$width-lg-two-thirds} - #{$padding-large} * 2);       }
-    .very.padded.two.thirds.container {     width: calc(#{$width-lg-two-thirds} - #{$padding-huge} * 2);        }
-    .half.container {                       width: calc(#{$width-lg-half}       - #{$padding-container} * 2);         }
-    .padded.half.container {                width: calc(#{$width-lg-half}       - #{$padding-large} * 2);             }
-    .very.half.padded.container {           width: calc(#{$width-lg-half}       - #{$padding-huge} * 2);              }
-    .third.container {                      width: calc(#{$width-lg-third}      - #{$padding-container} * 2);        }
-    .padded.third.container {               width: calc(#{$width-lg-third}      - #{$padding-large} * 2);            }
-    .very.third.padded.container {          width: calc(#{$width-lg-third}      - #{$padding-huge} * 2);             }
+    .container {                            width: calc(#{$width-lg-container}  - #{$padding-side-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-lg-container}  - #{$padding-side-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-lg-container}  - #{$padding-side-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-lg-two-thirds} - #{$padding-side-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-lg-two-thirds} - #{$padding-side-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-lg-two-thirds} - #{$padding-side-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-lg-half}       - #{$padding-side-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-lg-half}       - #{$padding-side-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-lg-half}       - #{$padding-side-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-lg-third}      - #{$padding-side-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-lg-third}      - #{$padding-side-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-lg-third}      - #{$padding-side-huge} * 2);        }
+
+    .adaptable .container {                            width: calc(#{$width-sm-container}  - #{$padding-side-container} * 2);    }
+    .adaptable .padded.container {                     width: calc(#{$width-sm-container}  - #{$padding-side-large} * 2);        }
+    .adaptable .very.padded.container {                width: calc(#{$width-sm-container}  - #{$padding-side-huge} * 2);         }
+    .adaptable .two.thirds.container {                 width: calc(#{$width-sm-two-thirds} - #{$padding-side-container} * 2);   }
+    .adaptable .padded.two.thirds.container {          width: calc(#{$width-sm-two-thirds} - #{$padding-side-large} * 2);       }
+    .adaptable .very.padded.two.thirds.container {     width: calc(#{$width-sm-two-thirds} - #{$padding-side-huge} * 2);        }
+    .adaptable .half.container {                       width: calc(#{$width-sm-half}       - #{$padding-side-container} * 2);         }
+    .adaptable .padded.half.container {                width: calc(#{$width-sm-half}       - #{$padding-side-large} * 2);             }
+    .adaptable .very.half.padded.container {           width: calc(#{$width-sm-half}       - #{$padding-side-huge} * 2);              }
+    .adaptable .third.container {                      width: calc(#{$width-sm-third}      - #{$padding-side-container} * 2);        }
+    .adaptable .padded.third.container {               width: calc(#{$width-sm-third}      - #{$padding-side-large} * 2);            }
+    .adaptable .very.third.padded.container {          width: calc(#{$width-sm-third}      - #{$padding-side-huge} * 2);             }
 }
 
 @media only screen and (min-width: map-get($grid-breakpoints, "xl")) {
-    .container {                            width: calc(#{$width-xl-container}  - #{$padding-container} * 2);    }
-    .padded.container {                     width: calc(#{$width-xl-container}  - #{$padding-large} * 2);        }
-    .very.padded.container {                width: calc(#{$width-xl-container}  - #{$padding-huge} * 2);         }
-    .two.thirds.container {                 width: calc(#{$width-xl-two-thirds} - #{$padding-container} * 2);   }
-    .padded.two.thirds.container {          width: calc(#{$width-xl-two-thirds} - #{$padding-large} * 2);       }
-    .very.padded.two.thirds.container {     width: calc(#{$width-xl-two-thirds} - #{$padding-huge} * 2);        }
-    .half.container {                       width: calc(#{$width-xl-half}       - #{$padding-container} * 2);         }
-    .padded.half.container {                width: calc(#{$width-xl-half}       - #{$padding-large} * 2);             }
-    .very.half.padded.container {           width: calc(#{$width-xl-half}       - #{$padding-huge} * 2);              }
-    .third.container {                      width: calc(#{$width-xl-third}      - #{$padding-container} * 2);        }
-    .padded.third.container {               width: calc(#{$width-xl-third}      - #{$padding-large} * 2);            }
-    .very.third.padded.container {          width: calc(#{$width-xl-third}      - #{$padding-huge} * 2);             }
+    .container {                            width: calc(#{$width-xl-container}  - #{$padding-side-container} * 2);    }
+    .padded.container {                     width: calc(#{$width-xl-container}  - #{$padding-side-large} * 2);        }
+    .very.padded.container {                width: calc(#{$width-xl-container}  - #{$padding-side-huge} * 2);         }
+    .two.thirds.container {                 width: calc(#{$width-xl-two-thirds} - #{$padding-side-container} * 2);   }
+    .padded.two.thirds.container {          width: calc(#{$width-xl-two-thirds} - #{$padding-side-large} * 2);       }
+    .very.padded.two.thirds.container {     width: calc(#{$width-xl-two-thirds} - #{$padding-side-huge} * 2);        }
+    .half.container {                       width: calc(#{$width-xl-half}       - #{$padding-side-container} * 2);         }
+    .padded.half.container {                width: calc(#{$width-xl-half}       - #{$padding-side-large} * 2);             }
+    .very.half.padded.container {           width: calc(#{$width-xl-half}       - #{$padding-side-huge} * 2);              }
+    .third.container {                      width: calc(#{$width-xl-third}      - #{$padding-side-container} * 2);        }
+    .padded.third.container {               width: calc(#{$width-xl-third}      - #{$padding-side-large} * 2);            }
+    .very.third.padded.container {          width: calc(#{$width-xl-third}      - #{$padding-side-huge} * 2);             }
 }

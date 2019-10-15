@@ -5,30 +5,51 @@ $color-red: #C1595E;
 $color-yellow: #E1DD8F;
 $color-dark: #495159;
 $color-medium: #798189;
+$color-medium-light: #99A1A9;
 $color-light: #EEEEEE;
 $color-text: $color-medium;
+$color-quote: $color-yellow;
 $color-heading: $color-red;
+$background-color: white;
+$background-color-faded: rgba(255, 255, 255, 0.6);
+$background-color-quote: $color-green;//$color-medium-light;
 
 $font-family: EB Garamond;
 
 $font-size-large: 90px;
 $font-size-medium: 45px;
 $font-size-small: 25px;
+$font-size-tiny: 15px;
 
-$padding-container: 8px;
+$padding-container: 0 8px 16px;
 $padding-button: 12px;
 $padding-button-hover: 18px 42px;
-$padding-large: 20px;
+$padding-quote: 8px;
+$padding-large:  0 20px 40px;
 $padding-huge: 40px;
+$padding-even-large: 20px;
+$padding-even-huge: 40px;
+
+$padding-side-container: 8px;
+$padding-side-button: 12px;
+$padding-side-button-hover: 42px;
+$padding-side-large: 20px;
+$padding-side-huge: 40px;
+$padding-side-even-large: 20px;
+$padding-side-even-huge: 40px;
 
 $margin-heading: 30px 5px 10px;
 $margin-heading-large: 40px 0 10px;
 $margin-heading-small: 15px 5px 5px;
+$margin-input: 0 0 0 20px;
 
 $border-button: 1px solid $color-medium;
 $border-button-hover: 1px solid $color-dark;
 
-$background-image-home-container: url("../images/butter1.jpg");
+$background-image-home-container: url("../images/cinnamonhoney.jpg");
+
+$height-textarea: 2em;
+$width-textarea: 100%;
 
 $width-image-small: 100px;
 $width-image-medium: 250px;
@@ -46,9 +67,9 @@ $width-sm-half: 100%;
 $width-sm-third: 100%;
 
 $width-md-container: 100%;
-$width-md-two-thirds: 66%;
-$width-md-half: 50%;
-$width-md-third: 33%;
+$width-md-two-thirds: 100%;
+$width-md-half: 100%;
+$width-md-third: 100%;
 
 $width-lg-container: 100%;
 $width-lg-two-thirds: 66%;
@@ -60,6 +81,8 @@ $width-xl-two-thirds: 66%;
 $width-xl-half: 50%;
 $width-xl-third: 33%;
 
-$grid-breakpoints: ("xs": 350px, "sm": 500px, "md": 750px, "lg": 1000px, "xl": 1200px);
+$grid-breakpoints: ("xs": 350px, "sm": 530px, "md": 750px, "lg": 1000px, "xl": 1200px);
 
-$row-break: "md"
+$row-break: "lg";
+$squishable-row-break: "sm";
+$adaptable-column-break: "lg";
