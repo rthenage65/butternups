@@ -28,7 +28,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.10.2",
     "browser-sync": "^2.24.5",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.19.2",
     "semantic-ui-css": "^2.4.1"
   }
